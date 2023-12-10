@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+#input-form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    color: #4CAF50;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #4CAF50;
+}
+
+/* Estilos específicos para cada categoria */
+.categoria-amarela {
+    background-color: #fff8e1; /* Amarelo claro */
+    border-color: #ffeb3b; /* Amarelo */
+    color: #ffeb3b; /* Amarelo */
+}
+
+.categoria-verde {
+    background-color: #e8f5e9; /* Verde claro */
+    border-color: #4CAF50; /* Verde */
+    color: #4CAF50; /* Verde */
+}
+
+.categoria-laranja {
+    background-color: #fff3e0; /* Laranja claro */
+    border-color: #ff9800; /* Laranja */
+    color: #ff9800; /* Laranja */
+}
+
+.categoria-vermelha {
+    background-color: #ffebee; /* Vermelho claro */
+    border-color: #f44336; /* Vermelho */
+    color: #f44336; /* Vermelho */
+}
+
