@@ -19,7 +19,7 @@ function calcularIMC() {
         mensagem = 'Ao contrário do que algumas pessoas possam pensar, ter um peso abaixo do recomendável é tão ou mais prejudicial do que ter excesso de peso.';
     } else if (imc < 25) {
         categoria = 'Peso Normal';
-        mensagem = 'O peso normal é o peso ideal que cada pessoa deve ter, de acordo com a sua idade, género e outras variáveis.';
+        mensagem = 'O peso normal é o peso ideal que cada pessoa deve ter, de acordo com a sua idade, gênero e outras variáveis.';
     } else if (imc < 30) {
         categoria = 'Excesso de Peso';
         mensagem = 'De um modo geral, o excesso de peso pode corresponder a um IMC entre 25 e 30. Esta é também considerada uma situação de pré-obesidade.';
