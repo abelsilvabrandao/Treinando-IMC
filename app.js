@@ -1,16 +1,8 @@
 function calcularIMC() {
     const nome = document.getElementById('nome').value;
     const peso = parseFloat(document.getElementById('peso').value);
-    const altura = parseAltura(document.getElementById('altura').value);
-function parseAltura(valorAltura) {
-    // Remove caracteres não numéricos e substitui a vírgula por ponto
-    const alturaNumerica = valorAltura.replace(/[^\d,]/g, '').replace(',', '.');
+    const altura = parseFloat(document.getElementById('altura').value);
 
-    // Converte a altura para float
-    return parseFloat(alturaNumerica);
-}
-
-    
     if (isNaN(peso) || isNaN(altura)) {
         alert('Por favor, insira valores válidos para peso e altura.');
         return;
