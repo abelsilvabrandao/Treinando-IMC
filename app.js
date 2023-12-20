@@ -10,6 +10,11 @@ function formatarAltura() {
     // Remove todos os caracteres não numéricos, exceto a vírgula
     valor = valor.replace(/[^\d,]/g, '');
 
+    // Transforma "100" em "1,00"
+    if (valor.length > 2 && valor[0] === '1' && valor[1] === '0' && valor[2] === '0') {
+        valor = '1,00';
+    }
+
     // Substitui a vírgula por ponto se houver mais de um dígito antes dela
     const partes = valor.split(',');
     if (partes[0].length > 1) {
