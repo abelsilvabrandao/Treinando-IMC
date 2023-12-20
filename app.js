@@ -1,16 +1,24 @@
-// Este bloco é executado quando o documento HTML foi completamente carregado
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Adiciona um ouvinte de evento para o botão de calcular IMC
     document.getElementById('calcular').addEventListener('click', calcularIMC);
-
-    // Adiciona a máscara ao campo de altura usando a biblioteca Inputmask
-    $('#altura').inputmask({
-        mask: '9,99',  // Define a máscara para aceitar 1 dígito antes da vírgula e 2 dígitos após a vírgula
-        placeholder: '0'  // Define um placeholder para indicar o formato esperado
-    });
-
+    document.getElementById('altura').addEventListener('input', formatarAltura);
 });
+
+function formatarAltura() {
+    const alturaInput = document.getElementById('altura');
+    let valor = alturaInput.value;
+
+    // Remove todos os caracteres não numéricos, exceto a vírgula
+    valor = valor.replace(/[^\d,]/g, '');
+
+    // Substitui a vírgula por ponto se houver mais de um dígito antes dela
+    const partes = valor.split(',');
+    if (partes[0].length > 1) {
+        partes[0] = partes[0].slice(0, 1);
+        valor = partes.join(',');
+    }
+
+    alturaInput.value = valor;
+}
 
 function calcularIMC() {
     const nome = document.getElementById('nome').value;
