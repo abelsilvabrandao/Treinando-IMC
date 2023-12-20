@@ -1,3 +1,17 @@
+// Este bloco é executado quando o documento HTML foi completamente carregado
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Adiciona um ouvinte de evento para o botão de calcular IMC
+    document.getElementById('calcular').addEventListener('click', calcularIMC);
+
+    // Adiciona a máscara ao campo de altura usando a biblioteca Inputmask
+    $('#altura').inputmask({
+        mask: '9,99',  // Define a máscara para aceitar 1 dígito antes da vírgula e 2 dígitos após a vírgula
+        placeholder: '0'  // Define um placeholder para indicar o formato esperado
+    });
+
+});
+
 function calcularIMC() {
     const nome = document.getElementById('nome').value;
     const peso = parseFloat(document.getElementById('peso').value);
