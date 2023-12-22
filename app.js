@@ -3,26 +3,19 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('altura').addEventListener('input', formatarAltura);
 });
 
-function formatarAltura() {
-    const alturaInput = document.getElementById('altura');
-    let valor = alturaInput.value;
+function aplicarMascaraAltura(input) {
+    // Remove espaços em branco e caracteres não numéricos
+    const valorLimpo = input.value.replace(/\D/g, '');
 
-    // Remove todos os caracteres não numéricos, exceto a vírgula
-    valor = valor.replace(/[^\d,]/g, '');
-
-    // Transforma "100" em "1,00"
-    if (valor.length > 2 && valor[0] === '1' && valor[1] === '0' && valor[2] === '0') {
-        valor = '1,00';
+    // Adiciona a máscara (1,67)
+    if (valorLimpo.length >= 3) {
+        const parteInteira = valorLimpo.slice(0, -2);
+        const parteDecimal = valorLimpo.slice(-2);
+        const alturaFormatada = parteInteira + ',' + parteDecimal;
+        input.value = alturaFormatada;
+    } else {
+        input.value = valorLimpo;
     }
-
-    // Substitui a vírgula por ponto se houver mais de um dígito antes dela
-    const partes = valor.split(',');
-    if (partes[0].length > 1) {
-        partes[0] = partes[0].slice(0, 1);
-        valor = partes.join(',');
-    }
-
-    alturaInput.value = valor;
 }
 
 function calcularIMC() {
