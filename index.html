@@ -23,7 +23,7 @@
             <input type="number" id="peso" step="0.01" required><br>
 
             <label for="altura">Altura (m,c):</label>
-            <input type="number" id="altura" step="0.01" required><br>
+            <input type="text" id="altura" placeholder="Digite a altura" oninput="aplicarMascaraAltura(this)">
 
             <button type="button" id="calcular">Calcular IMC</button>
         </form>
